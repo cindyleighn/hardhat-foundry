@@ -32,8 +32,7 @@ forge test
 
 Note: hardhat tests have been rewritten to foundry tests, so hardhat tests can be ignored
 
-To see more logging from the forge tests you can use the EVM verbosity 
-Verbosity of the EVM.
+To see more logging from the forge tests you can use the EVM verbosity parameters
           
 Pass multiple times to increase the verbosity (e.g. -v, -vv, -vvv).
 
