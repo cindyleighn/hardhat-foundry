@@ -31,7 +31,7 @@ contract Lock {
 
         // owner.transfer(address(this).balance); // not recommended practice
         // refactored to follow recommended practice https://solidity-by-example.org/sending-ether/
-        (bool sent, bytes memory data) = owner.call{value: address(this).balance}("");
+        (bool sent,) = owner.call{value: address(this).balance}("");
         require(sent, "Failed to transfer funds to owner");
     }
 }

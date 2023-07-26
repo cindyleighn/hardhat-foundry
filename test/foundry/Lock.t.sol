@@ -97,8 +97,6 @@ contract LockFoundryTest is Test {
     function testTransferToOwner() public startAtValidWithdrawalDay {
         console.log("Withdrawal should transfer the funds to the owner");
         uint256 oldBalance = address(owner).balance;
-
-        console.log(address(lock).balance);
         lock.withdraw();
         uint256 newBalance = address(owner).balance;
         assertEq(oldBalance + lockedAmount, newBalance);
