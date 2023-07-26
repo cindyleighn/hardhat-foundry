@@ -29,3 +29,22 @@ yarn hardhat compile
 yarn hardhat test
 forge test
 ```
+
+Note: hardhat tests have been rewritten to foundry tests, so hardhat tests can be ignored
+
+To see more logging from the forge tests you can use the EVM verbosity 
+Verbosity of the EVM.
+          
+Pass multiple times to increase the verbosity (e.g. -v, -vv, -vvv).
+
+Verbosity levels:
+- 2: Print logs for all tests
+- 3: Print execution traces for failing tests
+- 4: Print execution traces for all tests, and setup traces for failing tests
+- 5: Print execution and setup traces for all tests
+
+try
+```shell
+forge test -vv
+forge test -vvvv
+```
