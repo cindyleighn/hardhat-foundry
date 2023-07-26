@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.13;
 
 // Uncomment this line to use console.log
 // import "hardhat/console.sol";
@@ -29,6 +29,9 @@ contract Lock {
 
         emit Withdrawal(address(this).balance, block.timestamp);
 
-        owner.transfer(address(this).balance);
+        // owner.transfer(address(this).balance); // not recommended practice
+        // refactored to follow recommended practice https://solidity-by-example.org/sending-ether/
+        (bool sent, bytes memory data) = owner.call{value: address(this).balance}("");
+        require(sent, "Failed to transfer funds to owner");
     }
 }
